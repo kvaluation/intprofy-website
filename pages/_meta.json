@@ -1,14 +1,82 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
+  "index": {
+    "title": "Introduction　知的利益の交換",
+    "theme": {
+      "breadcrumb": true,
+      "footer": true,
+      "sidebar": true,
+      "toc": true,
+      "pagination": true
+    }
+  },
+  "documentmenu": {
+    "title": "文書",
+    "type": "page",
+    "href": "/documentation"
+  },
+  "documentation": {
+    "title": "文書",
+    "theme": {
+      "breadcrumb": true,
+      "footer": true,
+      "sidebar": true,
+      "toc": true,
+      "pagination": true
+    },
+    "type": "doc"
+  },
+  "---": {
+    "type": "separator"
+  },
+  "service": {
+    "theme": {
+      "breadcrumb": true,
+      "footer": true,
+      "sidebar": true,
+      "toc": true,
+      "pagination": true
+    },
+    "title": "サービス",
+    "type": "doc"
+  },
+  "blogs": {
+    "title": "ブログ",
     "type": "page"
   },
+  "intprofy": {
+    "display": "hidden",
+    "title": "企業概要",
+    "type": "page"
+  },
+  "KenjiSuzuki": {
+    "display": "hidden",
+    "title": "代表取締役　鈴木健治",
+    "type": "page"
+  },
+  "company": {
+    "title": "企業情報",
+    "type": "menu",
+    "display": "false",
+    "items": {
+      "intprofy": {
+        "title": "企業概要",
+        "type": "menu",
+        "href": "/intprofy"
+      },
+      "KenjiSuzuki": {
+        "title": "代表取締役社長　略歴",
+        "href": "/KenjiSuzuki"
+      }
+    }
+  },
   "contact": {
-    "title": "Contact ↗",
+    "title": "お問合せ ↗",
     "type": "page",
-    "href": "https://docs.google.com/forms/d/e/1FAIpQLSdA3TAEU2zyzL7dA-5AFSollqI1iYHnyU93a6zdQu5XaiD4pw/viewform?usp=sf_link"
+    "href": "https://docs.google.com/forms/d/e/1FAIpQLSdA3TAEU2zyzL7dA-5AFSollqI1iYHnyU93a6zdQu5XaiD4pw/viewform?usp=sf_link",
+    "newWindow": true
+  },
+  "united-connectivity": {
+    "title": "会員一覧",
+    "type": "page"
   }
 }

@@ -1,3 +1,10 @@
+# 株式会社知的利益のWebサイト
+
+このリポジトリーは、株式会社知的利益のWebサイトと連動しています。
+
+Nextraのテンプレートを使って構築しました。
+
+
 # Nextra Docs Template 
 
 This is a template for creating documentation with [Nextra](https://nextra.site).

@@ -1,17 +1,15 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import Image from 'next/image'
 
 const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
+  logo: <Image src="/intprofy_logo.png" alt="株式会社知的利益" width={52} height={24}/>,
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: 'https://www.intprofy.co.jp',
   },
-  chat: {
-    link: 'https://discord.com',
-  },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: 'https://github.com/kvaluation/intprofy-website',
   footer: {
-    text: 'Nextra Docs Template',
+    text: 'Copyright Intprofy Corp. ©, Powerd by Nextra',
   },
 }
 
