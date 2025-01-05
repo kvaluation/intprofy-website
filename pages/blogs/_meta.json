@@ -1,10 +1,14 @@
 {
-  "blog20250105": {
-    "title": "blog01",
-    "type": "page"
+  "*": {
+    "theme": {
+      "breadcrumb": true,
+      "footer": true,
+      "sidebar": true,
+      "toc": true,
+      "pagination": true
+    },
+    "type": "doc"
   },
-  "blog20250106": {
-    "title": "blog02",
-    "type": "page"
-  }
+  "blog20250105": "財務諸表分析",
+  "blog20250106": "ブランド・ポジショニング"
 }

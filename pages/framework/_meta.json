@@ -1,0 +1,18 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": true,
+      "footer": true,
+      "sidebar": true,
+      "toc": true,
+      "pagination": true
+    },
+    "type": "doc"
+  },
+  "definition": "知的利益の定義",
+  "exchange":  "知的利益の交換",
+  "endorser": "知的利益交換への賛同",
+  "historicalAnalysis": "過去の知的利益の分析",
+  "futureDesign": "未来の知的利益のデザイン",
+  "disclosure": "知的利益の開示"
+}

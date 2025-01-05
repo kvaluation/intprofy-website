@@ -1,5 +1,6 @@
 {
   "index": {
+    "display": "hidden",
     "title": "Introduction　知的利益の交換",
     "theme": {
       "breadcrumb": true,
@@ -9,13 +10,17 @@
       "pagination": true
     }
   },
-  "documentmenu": {
-    "title": "文書",
-    "type": "page",
-    "href": "/documentation"
+  "separator-top": {
+    "type": "separator",
+    "title": "Intprofy Framework"
   },
-  "documentation": {
-    "title": "文書",
+  "framework-menu": {
+    "title": "知的利益フレームワーク",
+    "type": "page",
+    "href": "/framework"
+  },
+  "framework": {
+    "title": "知的利益フレームワーク",
     "theme": {
       "breadcrumb": true,
       "footer": true,
@@ -25,8 +30,14 @@
     },
     "type": "doc"
   },
-  "---": {
-    "type": "separator"
+  "separator-service": {
+    "type": "separator",
+    "title": "Intprofy Service"
+  },
+  "service-menu": {
+    "title": "サービス",
+    "type": "page",
+    "href": "/service"
   },
   "service": {
     "theme": {
@@ -39,9 +50,18 @@
     "title": "サービス",
     "type": "doc"
   },
+  "blogs-menu": {
+    "title": "ブログ",
+    "type": "page",
+    "href": "/blogs"
+  },
+  "separator-blogs": {
+    "type": "separator",
+    "title": "Blogs"
+  },
   "blogs": {
     "title": "ブログ",
-    "type": "page"
+    "type": "doc"
   },
   "intprofy": {
     "display": "hidden",
@@ -76,7 +96,7 @@
     "newWindow": true
   },
   "united-connectivity": {
-    "title": "会員一覧",
+    "title": "賛同",
     "type": "page"
   }
 }
