@@ -9,7 +9,7 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/kvaluation/intprofy-website',
   footer: {
-    text: 'Copyright Intprofy Corp. ©, Powerd by Nextra',
+    text: 'Copyright Intprofy Corp. ©, Powered by Nextra',
   },
 }
 

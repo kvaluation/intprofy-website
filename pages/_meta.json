@@ -76,7 +76,7 @@
   "company": {
     "title": "企業情報",
     "type": "menu",
-    "display": "false",
+    "display": false,
     "items": {
       "intprofy": {
         "title": "企業概要",
