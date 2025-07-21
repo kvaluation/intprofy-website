@@ -3,10 +3,34 @@ import Script from 'next/script';
 
 const gtmId = 'GTM-TTSPVG5R';
 
+// ===================================================================
+// Consent Manager用のコンポーネント
+// ===================================================================
+const ConsentManagerScript = () => {
+  return (
+    <Script
+      id="consent-manager-script"
+      strategy="beforeInteractive" // GTMより先に読み込むための設定
+      type="text/javascript"
+      src="https://cdn.consentmanager.net/delivery/autoblocking/3d4a5c36a2327.js"
+      data-cmp-ab="1"
+      data-cmp-host="a.delivery.consentmanager.net"
+      data-cmp-cdn="cdn.consentmanager.net"
+      data-cmp-codesrc="0"
+    />
+  );
+};
+// ===================================================================
+//
+// GTM用のコンポーネント
+// ===================================================================
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      {/* GTMの本体スクリプト (JavaScriptが有効なブラウザ用) */}
+      {/* 1. Consent Managerのスクリプトを読み込む */}
+      <ConsentManagerScript />
+
+      {/* 2. GTMの本体スクリプト (CMPの後に読み込まれる) */}
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,7 +41,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         `}
       </Script>
       
-      {/* GTMのnoscript部分 (JavaScriptが無効なブラウザ用のフォールバック) */}
+      {/* GTMのnoscript部分 */}
       <noscript>
         <iframe
           src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
@@ -32,3 +56,4 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     </>
   );
 }
+// ===================================================================
