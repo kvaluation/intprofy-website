@@ -18,6 +18,7 @@
   },
   "homepage": "https://www.intprofy.co.jp",
   "dependencies": {
+    "@next/third-parties": "^15.4.2",
     "next": "^13.0.6",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
