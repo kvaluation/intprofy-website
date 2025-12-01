@@ -27,25 +27,25 @@
 　図１は、左側が[バックトゥザフューチャー](https://www.businessinsider.com/best-80s-movies-and-shows-stream-now-2020-5)（Universal Pictures）、右側が[リック・アンド・モーティ](https://mybroadband.co.za/news/industrynews/327909-rick-and-morty-returns-for-another-season-of-mayhem.html)（Adult Swim）であり、潜在拡散モデルの機能を用いて両者の補完画像を生成させている。  
 
 
-<img src="/public/dependence_01/fig01.png" alt="Wang and Golland [2023]Fig.1より" width="1000" />  
+<img src="/dependence_01/fig01.png" alt="Wang and Golland [2023]Fig.1より" width="1000" />  
 　図１　潜在拡散モデルの生成AIによる画像処理例  
 
 　この補完の過程は、生成AIによる修正・補正や補完が可視化させるため、生成AIが学習した画像と出力した画像との関係性を可視的に吟味する上で最適である。  
 　強い表現は、例えば、図１右側の黄色い服のモーティにかかるシートベルトや、バックトゥザフューチャーのブラウン博士が持つリモコンのアンテナなど、周囲と異なる存在で、明暗や色差があり、直線や曲線を横断する方向では微分できないような不連続な表現である。不連続な表現は、拡散モデルで原画像にノイズを加えても最後まで残りやすく、パラメーターに影響を与えやすい。  
 
-<img src="/public/dependence_01/fig02.png" alt="Wang and Golland [2023]Fig.1より拡大" width="400" />  
+<img src="/dependence_01/fig02.png" alt="Wang and Golland [2023]Fig.1より拡大" width="400" />  
 　図２　図１の一部拡大  
 
 　図２の符号１で示すように、背景の運転シートやハンドルが消失しても、ベルトが残っている。この図２の画像でシートベルトがあることは奇妙であるが、生成AIがコントロールする表現には意味的に不整合で、美的にもストーリーとしても必然性のない原画像の強い表現が残存する。図２の符号２は、この表現だけみると光線のようだが、図１のアンテナの残存として観察すると、位置、形や方向が同じである。  
 　このような不連続な強い表現が生成AI出力画像に残ることは、AIシステムが原画像を学習した証拠となる。つまり、原画像の不連続な強い表現はトラップ（罠）であり、意味を考えずに表現をコントロールした（または本当はしていない）主体が、人間であるか生成AIであるかを問わず、依拠したという間接証拠となる。  
 　図３は同じ補完を扱った別の著者による論文であるが、その後の生成AIの進化によりアンテナの残存表現は消失している一方、ベルトは残っている。  
 
-<img src="/public/dependence_01/fig03.png" alt="Cao et al. [2025] Fig.4より" width="1000" />  
+<img src="/dependence_01/fig03.png" alt="Cao et al. [2025] Fig.4より" width="1000" />  
 　図３　図１の素材を扱った他の例  
 
  図４は、先の論文にある別の画像で、左側がArya Stark役の[Maisie Williams](https://ew.com/gallery/game-thrones-character-portraits/) (MARC HOM for EW)、右側が[Arya Stark](https://www.gaming.net/ja/10-best-characters-in-multiversus-season-1/)のキャラクター表現である。  
 
-<img src="/public/dependence_01/fig04.png" alt="Wang and Golland [2023]Fig.A.1" width="1000" />  
+<img src="/dependence_01/fig04.png" alt="Wang and Golland [2023]Fig.A.1" width="1000" />  
 　図４　「不連続トラップ」による依拠の類似が観察される例  
 
 　最も右の図の背景に、いかだか船のような茶色い物体が水平に並んでいる。これが剣として解釈され始め、右から２番目では人体を貫いている。画像中の位置が同じところに、ほぼ同じ輪郭で存在し、生成AI出力画像の全体の文脈では剣の可能性が高いのかも知れないが、しかし、姿勢や顔の表情とは矛盾するほどに致命的な位置に刺さっている。同位置で輪郭も一致するため、依拠の類似であるといえる。生成AI出力画像にある矛盾、唐突感、不自然さはこの不連続物体がもたらす依拠の類似によることが多い。  
