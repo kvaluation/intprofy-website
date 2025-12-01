@@ -11,18 +11,11 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
-    slug: 'blog20250106',
-    title: 'ブランド・ポジショニング戦略の構築',
-    shortTitle: 'ブランド戦略',
-    date: '2025-01-06',
-    tags: ['企業分析', 'ブランド', 'マーケティング']
-  },
-  {
-    slug: 'blog20250105',
-    title: '財務諸表分析の手法と実践',
-    shortTitle: '財務分析手法',
-    date: '2025-01-05',
-    tags: ['企業分析', '財務', 'ROE']
+    slug: 'blog20251201',
+    title: '依拠の類似を生成AI出力画像から見つけるいくつかの方法（１）',
+    shortTitle: '依拠の類似',
+    date: '2025-12-01',
+    tags: ['生成AI', '著作権', '無断学習禁止']
   }
 ]
 
