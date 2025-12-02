@@ -3,7 +3,7 @@
     "theme": {
       "breadcrumb": true,
       "footer": true,
-      "sidebar": true,
+      "sidebar": false,
       "toc": true,
       "pagination": true
     },
