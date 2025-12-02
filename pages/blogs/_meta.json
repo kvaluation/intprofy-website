@@ -6,19 +6,16 @@
       "sidebar": true,
       "toc": true,
       "pagination": true
-    },
-    "type": "doc"
+    }
   },
   "blog20251201": {
     "title": "依拠の類似を生成AI出力画像から見つけるいくつかの方法（１）",
-      "type": "page",
     "theme": {
       "toc": true
-    }      
+    }
   },
   "blog20251202": {
     "title": "免除ロイヤリティ料率で目標の営業利益率を記述する",
-      "type": "page",
     "theme": {
       "toc": true
     }
