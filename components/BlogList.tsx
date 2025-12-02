@@ -16,6 +16,13 @@ const blogPosts: BlogPost[] = [
     shortTitle: '依拠の類似',
     date: '2025-12-01',
     tags: ['生成AI', '著作権', '無断学習禁止']
+  },
+  {
+    slug: 'blog20251202',
+    title: '免除ロイヤリティ料率で目標の営業利益率を記述する',
+    shortTitle: '',
+    date: '2025-12-02',
+    tags: ['免除ロイヤリティ', '営業利益率']
   }
 ]
 
@@ -73,7 +80,7 @@ const BlogList: React.FC = () => {
       <div className="space-y-2">
         {filteredPosts.map(post => (
           <div key={post.slug}>
-            <Link href={`/blogs/${post.slug}`} className="hover:text-blue-600 transition-colors">
+	    <Link href={`/blogs/${post.slug}`} className="hover:text-blue-600 transition-colors">
               <span className="text-sm text-gray-500">{post.date}</span>
               <span className="mx-2">　</span>
               <span className="font-medium">{post.title}</span>
