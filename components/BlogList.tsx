@@ -13,14 +13,14 @@ const blogPosts: BlogPost[] = [
   {
     slug: 'blog20251201',
     title: '依拠の類似を生成AI出力画像から見つけるいくつかの方法（１）',
-    shortTitle: '依拠の類似',
+    shortTitle: '依拠の類似(1)',
     date: '2025-12-01',
     tags: ['生成AI', '著作権', '無断学習禁止']
   },
   {
     slug: 'blog20251202',
     title: '免除ロイヤリティ料率で目標の営業利益率を記述する',
-    shortTitle: '',
+    shortTitle: '免除ロイヤリティ',
     date: '2025-12-02',
     tags: ['免除ロイヤリティ', '営業利益率']
   }
