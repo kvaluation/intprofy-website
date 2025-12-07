@@ -23,7 +23,14 @@ const blogPosts: BlogPost[] = [
     shortTitle: '免除ロイヤリティ',
     date: '2025-12-02',
     tags: ['免除ロイヤリティ', '営業利益率']
-  }
+  },
+  {
+    slug: 'blog20251204',
+    title: '原価計算と利益デザイン',
+    shortTitle: '免除ロイヤリティ',
+    date: '2025-12-04',
+    tags: ['原価計算', '営業利益率', '経営デザインシート']
+ }
 ]
 
 const BlogList: React.FC = () => {
