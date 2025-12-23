@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.intprofy.co.jp
+
+# Sitemaps
+Sitemap: https://www.intprofy.co.jp/sitemap.xml
