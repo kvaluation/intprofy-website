@@ -11,6 +11,12 @@ const config: DocsThemeConfig = {
   footer: {
     text: 'Copyright Intprofy Corp. ©',
   },
+   useNextSeoProps() {
+    return {
+      // %s は各ページのタイトルに置き換わる
+      titleTemplate: '%s - 株式会社知的利益' 
+    }
+  },
 }
 
 export default config
