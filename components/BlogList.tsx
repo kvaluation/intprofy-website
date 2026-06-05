@@ -33,6 +33,13 @@ const blogPosts: BlogPost[] = [
  },
   {
     slug: 'blog20251223',
+    title: 'のれん償却・非償却への意見',
+    shortTitle: 'のれん非償却論',
+    date: '2026-06-05',
+    tags: ['のれん', '特許権', '免除ロイヤリティ', '営業利益率']
+ }
+  {
+    slug: 'blog20260605',
     title: '国境をまたぐ競争法と知的財産法をつなぐ需要の代替性',
     shortTitle: '需要の代替性',
     date: '2025-12-23',
