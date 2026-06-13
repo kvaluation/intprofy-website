@@ -31,8 +31,14 @@ const config: DocsThemeConfig = {
     // クエリ・ハッシュを除いた正規URL（重複・正規ページ未選択の対策）
     const path = asPath.split(/[?#]/)[0]
     const canonical = `${SITE_URL}${path === '/' ? '' : path}`
-    const description =
-      (frontMatter as { description?: string }).description || DEFAULT_DESCRIPTION
+    const fm = frontMatter as { description?: string; image?: string }
+    const description = fm.description || DEFAULT_DESCRIPTION
+    // OGP 画像は frontmatter の image を唯一の出どころとする。
+    // image が無いページは og:image を出さない（＝SNS は画像なしのテキストカード）。
+    // 記事ごとにカード画像を作ったら、frontmatter に image: /path.png を足すだけで復活する。
+    const ogImage = fm.image
+      ? fm.image.startsWith('http') ? fm.image : `${SITE_URL}${fm.image}`
+      : undefined
     return {
       // %s は各ページのタイトルに置き換わる
       titleTemplate: '%s - 株式会社知的利益',
@@ -43,7 +49,7 @@ const config: DocsThemeConfig = {
         url: canonical,
         description,
         siteName: '株式会社知的利益',
-        images: [{ url: `${SITE_URL}/intprofy_logo.png` }],
+        ...(ogImage ? { images: [{ url: ogImage }] } : {}),
       },
     }
   },
