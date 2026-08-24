@@ -2,12 +2,16 @@ import React from 'react'
 import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import Vimeo from './components/Vimeo'
 
 const SITE_URL = 'https://www.intprofy.co.jp'
 const DEFAULT_DESCRIPTION =
   '株式会社知的利益（Intprofy）。知的財産と利益デザインに関する考察と実務。'
 
 const config: DocsThemeConfig = {
+  // 記事 mdx から import なしで使えるようにするコンポーネント。
+  // 記事側は <Vimeo id="…" title="…" /> と書くだけでよい。
+  components: { Vimeo },
   logo: <Image src="/intprofy_logo.png" alt="株式会社知的利益" width={52} height={24}/>,
   project: {
     link: 'https://github.com/kvaluation/intprofy-website',

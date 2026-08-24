@@ -51,6 +51,35 @@ tags: ["タグ1", "タグ2"]
 > tags: ["のれん", "特許権", "免除ロイヤリティ", "営業利益率"]
 > ```
 
+
+### 動画を入れる場合（Vimeo）
+
+動画は Vimeo に置き、記事本文の入れたい位置に `<Vimeo>` を1行書きます。
+**`import` は不要**です（`theme.config.tsx` の `components` に登録済み）。
+
+```mdx
+<Vimeo id="1234567890" title="音声を聞かなくても内容が分かる説明" caption="動画1　…" />
+```
+
+- `id` … Vimeo の共有URL `https://vimeo.com/1234567890` の**数字部分**。必須。
+- `title` … 必須。スクリーンリーダーが読み上げ、検索にも使われる。
+- `caption` … 任意。動画の下に小さく出る（`<figcaption>`）。
+- `ratio` … 任意。既定は `16 / 9`。縦動画は `"9 / 16"`、横長の画面録画は `"16 / 10"` など。
+- `h` … 任意。**限定公開**動画のハッシュ。一般公開なら不要。
+
+> **プライバシー**
+> 埋め込みURLに `dnt=1`（Do Not Track）を付けているため、Cookie を置かず視聴も追跡しません。
+> Consent Manager（CMP）との衝突を避けるための設計です。
+
+> **サムネイル（任意）**
+> 動画の1コマを静止画にして `public/<slug>/video01.jpg` に置き、frontmatter に
+> `image: /<slug>/video01.jpg` を書くと、SNSカードが「動画のある記事」だと分かる絵になります。
+
+実装は **`components/Vimeo.tsx` の1ファイルに閉じています**。
+プレイヤーの挙動（遅延読込・比率・プライバシー・将来のクリック後読込など）を変えるときは、
+記事ではなくこのファイルを直します。サイトを別フレームワークへ移す際も、
+同じ props のコンポーネントを1本書き直せば**記事本文は無変更**で済みます。
+
 ---
 
 ## 1. 関連付け（`_meta.json` に1行だけ）
@@ -103,6 +132,11 @@ rm -rf .next && npm run build
   H=$(find .next/server/pages/blogs -name 'blogYYYYMMDD.html')
   grep -oE '<title>[^<]*</title>|<meta name="description"[^>]*>' "$H"
   ```
+- 動画を入れた記事は、プレイヤーの iframe が出ているかを確認:
+  ```bash
+  grep -oE '<iframe src="https://player.vimeo.com/video/[^"]*"' "$H"
+  ```
+  `REPLACE_WITH_VIMEO_ID` のような**プレースホルダのまま残っていないか**をここで潰す。
 
 ---
 
@@ -116,7 +150,11 @@ git commit -m "ブログ記事を公開: blogYYYYMMDD ○○"
 git push origin main
 ```
 
-> デプロイ後は本番 `/blogs` を目視し、6記事すべて表示されるか（frontMatter キャッシュ由来の空表示が起きていないか）を一度確認すると安心。
+> デプロイ後は本番 `/blogs` を目視し、全記事が表示されるか（frontMatter キャッシュ由来の空表示が起きていないか）を一度確認すると安心。
+>
+> **動画を入れた記事は、本番ページで実際に再生できるかも確認する。**
+> Consent Manager の自動ブロックが `player.vimeo.com` を止めていると、動画の位置に同意プレースホルダが出る。
+> その場合は consentmanager の管理画面で許可リストに入れる（`dnt=1` で追跡していないため、その判断ができる）。
 
 ---
 
