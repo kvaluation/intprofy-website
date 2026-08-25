@@ -1,3 +1,6 @@
 .next
 node_modules
 .DS_Store
+
+# Emacs のロックファイル（開いている間だけ作られるシンボリックリンク）
+.#*
