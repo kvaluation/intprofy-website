@@ -156,6 +156,30 @@ git push origin main
 > Consent Manager の自動ブロックが `player.vimeo.com` を止めていると、動画の位置に同意プレースホルダが出る。
 > その場合は consentmanager の管理画面で許可リストに入れる（`dnt=1` で追跡していないため、その判断ができる）。
 
+### ⚠️ ビルドキャッシュで一覧だけが古くなる
+
+Vercel はデプロイ間で Next.js のビルドキャッシュを復元する。
+**mdx と `_meta.json` しか変更していないデプロイでは、キャッシュされた古いページマップが再利用され、
+記事ページは最新なのに `/blogs` の一覧・タグ・サイドバーだけが古いまま**になることがある。
+このブログは通常 mdx の追加だけなので、放置すると毎回起きる。
+
+- 対策: Vercel → プロジェクト → Settings → Environment Variables に
+  `VERCEL_FORCE_NO_BUILD_CACHE` = `1`（Production）を設定し、毎回キャッシュなしでビルドさせる。
+- その場しのぎ: Deployments → 対象デプロイの「⋯」→ Redeploy で
+  **「Use existing Build Cache」のチェックを外す**。
+- どうしてもダッシュボードを触れないとき: `.tsx` のどれかに1行加えて push すると
+  キャッシュが壊れて一覧が更新される（応急処置）。
+
+> **確認は記事ページではなく `/blogs` で行う。**
+> この不具合が起きていても記事ページは正常に表示されるため、
+> 公開直後に記事URLだけを見ると「問題なし」に見えてしまう。
+
+```bash
+# 本番の一覧が更新されたかの確認
+curl -s https://www.intprofy.co.jp/blogs | grep -c 'blogs/blogYYYYMMDD'   # 1 であること
+curl -s https://www.intprofy.co.jp/blogs | grep -c '選択したタグに一致'    # 0 であること
+```
+
 ---
 
 ## 5. 公開後（Google Search Console / 人間が操作）

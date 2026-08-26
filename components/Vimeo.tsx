@@ -32,6 +32,10 @@ const Vimeo: React.FC<VimeoProps> = ({ id, h, title, caption, ratio = '16 / 9' }
   params.set('byline', '0')
   params.set('portrait', '0')
 
+  // data-cmp-ab="1" は consentmanager の自動ブロックから iframe を除外する指定。
+  // この埋め込みは dnt=1 で Cookie を置かず視聴追跡もしないため、同意ゲートの対象にしない。
+  // 外すと「不明なベンダー」の同意プレースホルダに差し替えられ、
+  // Cookie を拒否した読者には動画が表示されなくなる。
   return (
     <figure style={{ margin: '1.5rem 0' }}>
       <div style={{ position: 'relative', width: '100%', aspectRatio: ratio }}>
@@ -39,6 +43,7 @@ const Vimeo: React.FC<VimeoProps> = ({ id, h, title, caption, ratio = '16 / 9' }
           src={`https://player.vimeo.com/video/${id}?${params.toString()}`}
           title={title}
           loading="lazy"
+          data-cmp-ab="1"
           allow="fullscreen; picture-in-picture"
           referrerPolicy="strict-origin-when-cross-origin"
           style={{
